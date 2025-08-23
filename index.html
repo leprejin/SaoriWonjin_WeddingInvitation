@@ -39,17 +39,8 @@
 
 <body id="top">
 <header></header>
-<div id="fb-root"></div>
-
 <!-- Language Selector -->
-<div class="language-selector">
-    <label for="language" style="margin-right:5px; font-weight:bold;">Language:</label>
-    <select id="language">
-        <option value="en">English</option>
-        <option value="ko">한국어</option>
-        <option value="ja">日本語</option>
-    </select>
-</div>
+<div id="fb-root"></div>
 <div class="page-content">
     <div class="div">
         <div class="ww-home-page" id="home">
@@ -72,38 +63,49 @@
                     </p>
                 </div>
             </div>
-		<div class="ww-nav-bar sticky-top bg-light" id="ww-navbarNav">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link smooth-scroll lang"
-					   href="#home"
-					   data-en="Home"
-					   data-ko="홈"
-					   data-ja="ホーム">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link smooth-scroll lang"
-					   href="#couple"
-					   data-en="Couple"
-					   data-ko="신랑 & 신부"
-					   data-ja="新郎 & 新婦">Couple</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link smooth-scroll lang"
-					   href="#events"
-					   data-en="Events"
-					   data-ko="이벤트"
-					   data-ja="イベント">Events</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link smooth-scroll lang"
-					   href="#map"
-					   data-en="Map"
-					   data-ko="오시는 길"
-					   data-ja="アクセス">Map</a>
-				</li>
-			</ul>
-		</div>
+        <div class="ww-nav-bar sticky-top bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <button aria-controls="ww-navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler"
+                            data-target="#ww-navbarNav" data-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item">
+									<a class="nav-link smooth-scroll lang"
+									   href="#home"
+									   data-en="Home"
+									   data-ko="홈"
+									   data-ja="ホーム">Home</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link smooth-scroll lang"
+									   href="#couple"
+									   data-en="Couple"
+									   data-ko="신랑 & 신부"
+									   data-ja="新郎 & 新婦">Couple</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link smooth-scroll lang"
+									   href="#events"
+									   data-en="Events"
+									   data-ko="이벤트"
+									   data-ja="イベント">Events</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link smooth-scroll lang"
+									   href="#map"
+									   data-en="Map"
+									   data-ko="오시는 길"
+									   data-ja="アクセス">Map</a>
+								</li>
+							</ul>
+                    </div>
+                </div>
+            </nav>
+        </div>			
      </div>
 
 
@@ -269,6 +271,14 @@
             </div>
         </div>
     </div>
+</div>
+<div class="language-selector">
+    <label for="language" style="margin-right:5px; font-weight:bold;">Language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="ja">日本語</option>
+    </select>
 </div>
 <footer></footer>
 
