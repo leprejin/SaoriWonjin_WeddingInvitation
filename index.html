@@ -52,6 +52,18 @@
         <option value="ja">日本語</option>
     </select>
 </div>
+<style>
+.language-selector {
+    position: fixed;
+    bottom: 10px;   /* 화면 아래에서 10px 띄움 */
+    left: 10px;     /* 화면 왼쪽에서 10px 띄움 */
+    z-index: 2000;  /* 다른 요소 위에 보이도록 */
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+</style>
 
 <div class="page-content">
     <div class="div">
@@ -185,6 +197,11 @@
                                 </li>
                             </ul>
                         </div>
+                    <div class="col-md-5 col-sm-12">
+                        <div class="my-3">
+                            <img alt="Wedding Party" class="img-fluid" src="images/wedding-party.jpg"/>
+                        </div>
+                    </div>					
                     </div>
 						<div class="row">
 							<div class="col-md-7 col-sm-12">
@@ -260,16 +277,16 @@
 				</div>
 				<div class="cta">
 				  <!-- RSVP 버튼 -->
-				  <a class="btn lang" id="rsvpBtn"
-					 href="#"
-					 data-en="RSVP"
-					 data-ko="신랑 신부에게 메시지"
-					 data-ja="新郎新婦にメッセージ"
-					 data-en-subject="Congratulations"
-					 data-ko-subject="참석 여부 회신드립니다"
-					 data-ja-subject="ご結婚おめでとうございます">
-					 RSVP
-				  </a>
+					<a class="btn lang" id="rsvpBtn"
+					   href="mailto:leewonjinjin@naver.com,unasaori@gmail.com?subject=Congratulations"
+					   data-en="RSVP"
+					   data-ko="신랑 신부에게 메시지"
+					   data-ja="新郎新婦にメッセージ"
+					   data-subject-en="Congratulations"
+					   data-subject-ko="축하의 말씀"
+					   data-subject-ja="ご結婚おめでとうございます">
+					   RSVP
+					</a>
 				</div>
             </div>
         </div>
@@ -305,6 +322,33 @@
     document.getElementById("language").addEventListener("change", function() {
         updateLanguage(this.value);
     });
+	
+	//RSVP 버튼 언어 세팅 변경	
+	function setLanguage(lang) {
+    document.querySelectorAll(".lang").forEach(el => {
+        if (el.dataset[lang]) {
+            el.innerHTML = el.dataset[lang];
+        }
+    });
+
+    // RSVP 버튼 subject 동적 변경
+    const rsvpBtn = document.getElementById("rsvpBtn");
+    if (rsvpBtn) {
+        const subject = rsvpBtn.getAttribute(`data-subject-${lang}`);
+        if (subject) {
+            rsvpBtn.href = `mailto:leewonjinjin@naver.com,unasaori@gmail.com?subject=${encodeURIComponent(subject)}`;
+        }
+    }
+}
+	
 </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/ekko-lightbox.min.js"></script>
+<script src="scripts/main.js"></script>
 </body>
 </html>
