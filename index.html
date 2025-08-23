@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Wedding Invitation — Wonjin & Saori</title>
+    <title>Wonjin & Saori's Wedding</title>
     <meta content="You’re invited to our wedding" name="description"/>
     <meta property="og:image" content="images/pic2.jpeg">
     <meta property="fb:app_id" content="781066922265598" />
@@ -19,9 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+/*
     <style>
-        /* Language dropdown */
         .language-selector {
             position: fixed;
             top: 10px;
@@ -37,6 +36,7 @@
             cursor: pointer;
         }
     </style>
+	*/
 </head>
 
 <body id="top">
@@ -54,14 +54,24 @@
 </div>
 <style>
 .language-selector {
-    position: fixed;
-    bottom: 10px;   /* 화면 아래에서 10px 띄움 */
-    left: 10px;     /* 화면 왼쪽에서 10px 띄움 */
-    z-index: 2000;  /* 다른 요소 위에 보이도록 */
+    position: fixed !important; /* 항상 화면 기준 */
+    bottom: 10px;               /* 브라우저 창 아래에서 10px */
+    left: 10px;                 /* 브라우저 창 왼쪽에서 10px */
+    z-index: 9999;              /* 모든 요소 위 */
+    display: flex;              /* label + select 가 가로로 정렬되도록 */
+    align-items: center;
     background: #fff;
     padding: 5px 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    width: auto;                /* 길게 늘어나지 않도록 */
+}
+.language-selector label {
+    white-space: nowrap; /* 'Language:' 줄바꿈 안되게 */
+}
+.language-selector select {
+    max-width: 120px;   /* 너무 길게 늘어나지 않게 */
 }
 </style>
 
@@ -162,7 +172,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Events -->
         <div class="ww-section bg-light" id="events">
             <div class="container ww-wedding-event">
@@ -171,6 +180,31 @@
                     data-ko="초대합니다"
                     data-ja="ご招待します"
                     style="font-family: 'Noto Serif KR', serif;">초대합니다</h2>
+					
+                <div class="row">
+                    <div class="col-md-7 col-sm-12">
+                            <div class="h4 lang"
+                                 data-en="Wedding Ceremony"
+                                 data-ko="웨딩 본식"
+                                 data-ja="結婚式">웨딩 본식</div>
+                            <ul>
+                                <li>
+                                    <i class="text-muted fas fa-map-marker-alt"></i>
+                                    <span class="pl-2 text-muted">부산 해운대 우동 센텀사이언스 파크 23층</span>
+                                </li>
+                                <li class="pt-2">
+                                    <i class="text-muted far fa-calendar-alt"></i>
+                                    <span class="pl-2 text-muted">2019년 5월 18일, 2:30PM</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <div class="my-3">
+                            <img alt="Wedding Party" class="img-fluid" src="images/wedding-party.jpg"/>
+                        </div>
+                    </div>
+                </div>					
                 <div class="row">
                     <div class="col-md-7 col-sm-12">
                         <div class="my-3">
@@ -196,12 +230,12 @@
                                     </span>
                                 </li>
                             </ul>
-                        </div>
-                    <div class="col-md-5 col-sm-12">
+                        </div>					
+                    </div>
+					  <div class="col-md-5 col-sm-12">
                         <div class="my-3">
                             <img alt="Wedding Party" class="img-fluid" src="images/wedding-party.jpg"/>
                         </div>
-                    </div>					
                     </div>
 						<div class="row">
 							<div class="col-md-7 col-sm-12">
@@ -292,7 +326,6 @@
         </div>
     </div>
 </div>
-
 <footer></footer>
 
 <script>
